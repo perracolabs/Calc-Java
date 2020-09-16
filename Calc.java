@@ -10,9 +10,7 @@ public final class Calc {
             isNegative = true;
         else {
             final char prev = exp.charAt(index - 1);
-
-            if (prev == '(' || (prev != ')' && !Character.isDigit(prev)))
-                isNegative = true;
+            isNegative = (prev == '(' || (prev != ')' && !Character.isDigit(prev)));
         }
 
         if (isNegative) {
