@@ -38,7 +38,7 @@ public final class Calc {
 
     public float solve(final String source) {
 
-        final String exp = "(" + source.trim().replaceAll("\\s+", "") + ")";
+        final String exp = "(" + source.replaceAll(" ", "") + ")";
 
         final Map<Character, Integer> precedenceMap = new HashMap<>();
         precedenceMap.put('-', 1);
@@ -88,7 +88,7 @@ public final class Calc {
         return operands.pop();
     }
 
-    public static void main(final String[] args) {
+    public static void main(String[] args) {
 
         System.out.println(new Calc().solve("1+(-2*-7)*((-4/2)+-3)*-1"));
     }
