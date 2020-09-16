@@ -2,9 +2,8 @@ import java.util.*;
 
 public final class Calc {
 
-    private boolean manageNegative(final String exp, final int index,
-                                   final Stack<Character> operators, final Stack<Float> operands) {
-        boolean isNegative = false;
+    private boolean manageNegative(final String exp, final int index, final Stack<Character> operators, final Stack<Float> operands) {
+        final boolean isNegative;
 
         if (index == 0)
             isNegative = true;
