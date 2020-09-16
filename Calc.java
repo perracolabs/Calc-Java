@@ -49,8 +49,8 @@ public final class Calc {
         final Stack<Character> operators = new Stack<>();
         final Stack<Float> operands = new Stack<>();
 
-        for (int i = 0; i < exp.length(); i++) {
-            final char current = exp.charAt(i);
+        for (int index = 0; index < exp.length(); index++) {
+            final char current = exp.charAt(index);
 
             if (current == '(') {
                 operators.push(current);
@@ -61,7 +61,7 @@ public final class Calc {
 
                 operators.pop();
             }
-            else if (current == '-' && this.manageNegative(exp, i, operators, operands)) {
+            else if (current == '-' && this.manageNegative(exp, index, operators, operands)) {
                 continue;
             }
             else if (precedenceMap.containsKey(current)) {
@@ -73,15 +73,15 @@ public final class Calc {
                 operators.push(current);
             }
             else {
-                int num = 0;
+                int number = 0;
 
-                while (Character.isDigit(exp.charAt(i))) {
-                    num = (num * 10) + (exp.charAt(i) - '0');
-                    i++;
+                while (Character.isDigit(exp.charAt(index))) {
+                    number = (number * 10) + (exp.charAt(index) - '0');
+                    index++;
                 }
 
-                operands.push((float)num);
-                i--;
+                operands.push((float)number);
+                index--;
             }
         }
 
