@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class Calc {
+public final class Calc {
 
     private boolean manageNegative(final String exp, final int index,
                                    final Stack<Character> operators, final Stack<Float> operands) {
@@ -38,7 +38,7 @@ public class Calc {
             operands.push(left * right);
     }
 
-    private float solve(final String source) {
+    public float solve(final String source) {
 
         final String exp = "(" + source.trim().replaceAll("\\s+", "") + ")";
 
